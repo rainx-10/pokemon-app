@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Pokémon List</h2>
+  <table>
+    <tr>
+      <th *ngFor="let column of displayedColumns">{{ column }}</th>
+    </tr>
+    <tr *ngFor="let pokemon of pokemonList">
+      <td>{{ pokemon.name | wordCase }}</td>
+      <td><img [src]="pokemon.sprites.front_default" alt="Pokemon Image"></td>
+      <td>
+        <ul>
+          <li *ngFor="let ability of pokemon.abilities">{{ ability.ability.name | wordCase }}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let type of pokemon.types" [ngClass]="'type-icon type-' + type.type.name">{{ type.type.name | wordCase }}</li>
+        </ul>
+      </td>
+      <td>{{ pokemon.base_experience }}</td>
+      <td>{{ pokemon.height * 10 }} cm</td>
+      <td>{{ pokemon.weight / 10 }} kg</td>
+    </tr>
+  </table>
+</div>

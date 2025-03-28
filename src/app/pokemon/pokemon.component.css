@@ -1,0 +1,108 @@
+/* Main container styling */
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Title styling */
+h2 {
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 24px;
+  color: #ff1c1c;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Table header */
+th {
+  background: #ff1c1c;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #b30000;
+}
+
+/* Table rows */
+td {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Zebra striping for rows */
+tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+tr:hover {
+  background: #ffeded;
+  transition: background 0.3s;
+}
+
+/* Pokémon image styling */
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+/* Ability & Type lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.type-icon {
+  font-size: 12px;
+  padding: 3px 6px;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 2px;
+  background: #dbdbdb;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Type-specific colors */
+.type-normal { background: #aa9; }
+.type-fire { background: #f42; }
+.type-water { background: #39f; }
+.type-electric { background: #fc3; }
+.type-grass { background: #7c5; }
+.type-ice { background: #6cf; }
+.type-fighting { background: #b54; }
+.type-poison { background: #a59; }
+.type-ground { background: #db5; }
+.type-flying { background: #89f; }
+.type-psychic { background: #f59; }
+.type-bug { background: #ab2; }
+.type-rock { background: #ba6; }
+.type-ghost { background: #66b; }
+.type-dragon { background: #76e; }
+.type-dark { background: #754; }
+.type-steel { background: #aab; }
+.type-fairy { background: #e9e; }
