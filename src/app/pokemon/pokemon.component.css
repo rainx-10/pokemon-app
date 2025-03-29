@@ -1,25 +1,16 @@
-/* Main container styling */
-
+/* ✅ Main Container */
 .container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #f8f8f8;
+  max-width: 1220px;
+  margin: 1.25rem auto 2rem;
+  padding: 1.5rem 2rem;
+  background: white;
   border-radius: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Title styling */
-h2 {
-  font-family: 'Press Start 2P', sans-serif;
-  font-size: 24px;
-  color: #ff1c1c;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Table styling */
+/* ✅ Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -27,9 +18,10 @@ table {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s;
 }
 
-/* Table header */
+/* ✅ Table Header */
 th {
   background: #ff1c1c;
   color: white;
@@ -39,7 +31,7 @@ th {
   border-bottom: 2px solid #b30000;
 }
 
-/* Table rows */
+/* ✅ Table Rows */
 td {
   padding: 10px;
   font-size: 14px;
@@ -47,29 +39,7 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
-/* Zebra striping for rows */
-tr:nth-child(even) {
-  background: #f8f8f8;
-}
-
-tr:hover {
-  background: #ffeded;
-  transition: background 0.3s;
-}
-
-/* Pokémon image styling */
-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
-}
-
-img:hover {
-  transform: scale(1.1);
-}
-
-/* Ability & Type lists */
+/* 🔘 Type Icons */
 ul {
   list-style: none;
   padding: 0;
@@ -78,20 +48,22 @@ ul {
 
 .type-icon {
   font-size: 12px;
-  padding: 3px 6px;
+  padding: 5px 10px;
   display: inline-block;
   border-radius: 5px;
   margin: 2px;
   background: #dbdbdb;
   color: #fff;
   font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px black;
 }
 
-/* Type-specific colors */
+/* 🎨 Type-Specific Colors */
 .type-normal { background: #aa9; }
 .type-fire { background: #f42; }
 .type-water { background: #39f; }
-.type-electric { background: #fc3; }
+.type-electric { background: #fc3; color: black; } 
 .type-grass { background: #7c5; }
 .type-ice { background: #6cf; }
 .type-fighting { background: #b54; }
@@ -106,3 +78,77 @@ ul {
 .type-dark { background: #754; }
 .type-steel { background: #aab; }
 .type-fairy { background: #e9e; }
+
+/* 🎛️ Dark Mode Toggle Button */
+.toggle-button {
+  background: #ff1c1c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+
+.toggle-button:hover {
+  opacity: 0.8;
+}
+
+/* Container for the label and search input to display inline */
+.search-container {
+  display: inline-flex;
+  align-items: center; /* Vertically center the items */
+  margin-bottom: 10px; /* Optional: space below the search bar */
+}
+
+/* Style for the label */
+.search-label {
+  font-size: 16px;
+  margin-right: 10px; /* Space between label and input */
+  color: #333;
+}
+
+/* Shortened Search Input */
+.search-input {
+  width: 250px; /* Shortened width of the input */
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Light Mode Styles for Search Input */
+.search-input-light {
+  background-color: #fff;
+  color: #333;
+}
+
+.search-input-light:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Dark Mode Styles for Search Input */
+.search-input-dark {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.search-input-dark:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Placeholder Styles for both modes */
+.search-input-light::placeholder {
+  color: #888;
+}
+
+.search-input-dark::placeholder {
+  color: #aaa;
+}

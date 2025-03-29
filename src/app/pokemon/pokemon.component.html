@@ -1,25 +1,43 @@
 <div class="container">
-  <h2>Pokémon List</h2>
-  <table>
-    <tr>
-      <th *ngFor="let column of displayedColumns">{{ column }}</th>
-    </tr>
-    <tr *ngFor="let pokemon of pokemonList">
-      <td>{{ pokemon.name | wordCase }}</td>
-      <td><img [src]="pokemon.sprites.front_default" alt="Pokemon Image"></td>
-      <td>
-        <ul>
-          <li *ngFor="let ability of pokemon.abilities">{{ ability.ability.name | wordCase }}</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li *ngFor="let type of pokemon.types" [ngClass]="'type-icon type-' + type.type.name">{{ type.type.name | wordCase }}</li>
-        </ul>
-      </td>
-      <td>{{ pokemon.base_experience }}</td>
-      <td>{{ pokemon.height * 10 }} cm</td>
-      <td>{{ pokemon.weight / 10 }} kg</td>
-    </tr>
-  </table>
+  <div>
+    <button class="toggle-button" (click)="toggleDarkMode()">
+      <i *ngIf="isDarkMode; else lightMode" class="fas fa-sun"></i>
+      <ng-template #lightMode><i class="fas fa-moon"></i></ng-template>
+      {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+    </button>
+  </div>
+
+  <!-- Dynamic Search Input -->
+  <div class="search-container">
+    <label for="pokemonSearch" class="search-label">Name:</label>
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      placeholder="Search Pokémon" 
+      (input)="filterPokemon()" 
+      [ngClass]="{'search-input-dark': isDarkMode, 'search-input-light': !isDarkMode}"
+      class="search-input"
+    />
+  </div>
+
+  <div class="container">
+    <h2>Pokédex</h2>
+    <table>
+      <tr>
+        <th *ngFor="let column of displayedColumns">{{ column }}</th>
+      </tr>
+      <tr *ngFor="let pokemon of filteredPokemon">
+        <td>{{ pokemon.id }}</td>
+        <td>{{ pokemon.name | wordCase }}</td>
+        <td><img [src]="pokemon.sprites.front_default" alt="{{pokemon.name}}"></td>
+        <td>
+          <ul class="type-list">
+            <li *ngFor="let type of pokemon.types" [ngClass]="'type-icon type-' + type.type.name">{{ type.type.name | wordCase }}</li>
+          </ul>
+        </td>
+        <td>{{ getTotalStats(pokemon.stats) }}</td> <!-- Total Stats Column -->
+        <td *ngFor="let stat of pokemon.stats">{{ stat.base_stat }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
