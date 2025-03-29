@@ -1,27 +1,63 @@
-# PokemonApp
+# Pokémon App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+Welcome to the Pokémon App! This is a simple Angular application that allows you to view information about the first 151 Pokémon, including their name, image, types, and stats. The app features a dynamic search bar, dark and light mode toggling, and a responsive layout.
 
-## Development server
+## Features
+- **Pokédex**: View details for the first 151 Pokémon.
+- **Search**: Filter Pokémon by name.
+- **Dark and Light Mode**: Toggle between dark and light mode.
+- **Responsive Layout**: Optimized for both desktop and mobile view.
+- **Types**: Display Pokémon types with styled icons.
+- **Stats**: View individual Pokémon stats and total stats.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+- **Angular**: Frontend framework for building the app.
+- **CSS**: Styling for light and dark modes and responsive layout.
+- **Pokémon API**: Fetches Pokémon data (or locally stored data for demo purposes).
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-## Build
+### Steps to Run the App Locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository to your local machine:
 
-## Running unit tests
+    ```bash
+    git clone https://github.com/yourusername/pokemon-app.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navigate into the project directory:
 
-## Running end-to-end tests
+    ```bash
+    cd pokemon-app
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Install the dependencies:
 
-## Further help
+    ```bash
+    npm install
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Run the development server:
+
+    ```bash
+    ng serve
+    ```
+
+5. Open your browser and go to `http://localhost:4200/` to see the app in action.
+
+## How It Works
+- The app fetches Pokémon data (or uses a locally stored JSON file for this demo) and displays it in a table.
+- The table includes columns for the Pokémon's ID, name, image, types, and stats.
+- Users can filter the list of Pokémon by entering a search term in the search bar.
+- The app supports both dark and light themes, which can be toggled using the button on the top-right corner of the app.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+- Thanks to the open-source community and contributors for making Pokémon data and related resources available!
+- Thanks to [Pokémon API](https://pokeapi.co/) for providing the data source for Pokémon information (if you're using it in your app).
